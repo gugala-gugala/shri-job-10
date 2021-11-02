@@ -72,9 +72,9 @@ module.exports = class {
         this._data = [];
     }
 
-    forEach(callback) {
+    forEach(callback, context) {
         for (let v of this._data) {
-            callback(v);
+            callback.call(context, v);
         }
     }
 
