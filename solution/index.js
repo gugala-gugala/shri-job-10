@@ -39,7 +39,13 @@ module.exports = class {
     }
 
     keys() {
-        return Object.values(this._data);
+        let self = this;
+        function* _iter() {
+            for (let v of Object.values(self._data)) {
+                yield v;
+            }
+        }
+        return _iter();
     }
 
     values() {
