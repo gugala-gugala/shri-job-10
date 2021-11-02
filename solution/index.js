@@ -38,6 +38,14 @@ module.exports = class {
         }
     }
 
+    keys() {
+        return Object.values(this._data);
+    }
+
+    values() {
+        return Object.values(this._data);
+    }
+
     entries() {
         let self = this;
         function* _iter() {
